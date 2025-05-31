@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events - Campus Connect Portal</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Decorative Elements -->
+    <div class="floating-decoration"></div>
+    <div class="floating-decoration"></div>
+    <div class="floating-decoration"></div>
+    <div class="floating-decoration"></div>
+    
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Campus Connect</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="events.html">Events</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="clubs.html">Clubs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="announcements.html">Announcements</a>
+                    </li>
+                </ul>
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="searchInput">
+                    <button class="btn btn-outline-light" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header bg-primary text-white text-center py-5">
+        <div class="container">
+            <h1 class="display-4">Campus Events</h1>
+            <p class="lead">Discover and participate in exciting events happening on campus</p>
+        </div>
+    </header>
+
+    <!-- Filter Section -->
+    <section class="container mt-4">
+        <div class="card filter-section">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-4 mb-2 mb-md-0">
+                        <label for="categoryFilter" class="form-label">Filter by Category</label>
+                        <select class="form-select" id="categoryFilter">
+                            <option value="all" selected>All Categories</option>
+                            <option value="cultural">Cultural</option>
+                            <option value="technology">Technology</option>
+                            <option value="academic">Academic</option>
+                            <option value="sports">Sports</option>
+                            <option value="career">Career</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4 mb-2 mb-md-0">
+                        <label for="dateFilter" class="form-label">Filter by Date</label>
+                        <select class="form-select" id="dateFilter">
+                            <option value="all" selected>All Dates</option>
+                            <option value="upcoming">Upcoming</option>
+                            <option value="this-week">This Week</option>
+                            <option value="this-month">This Month</option>
+                            <option value="next-month">Next Month</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="eventSearch" class="form-label">Search Events</label>
+                        <input type="text" class="form-control" id="eventSearch" placeholder="Search by keyword">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Events Section -->
+    <section class="container my-5">
+        <div class="row" id="eventsContainer">
+            <!-- Events will be dynamically loaded here -->
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <h5>Campus Connect</h5>
+                    <p>Your one-stop portal for campus events, clubs, and announcements.</p>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="text-white">Home</a></li>
+                        <li><a href="events.html" class="text-white">Events</a></li>
+                        <li><a href="clubs.html" class="text-white">Clubs</a></li>
+                        <li><a href="announcements.html" class="text-white">Announcements</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <h5>Contact Us</h5>
+                    <address>
+                        <p><i class="fas fa-map-marker-alt"></i> 123 University Ave, Campus City</p>
+                        <p><i class="fas fa-envelope"></i> info@campusconnect.edu</p>
+                        <p><i class="fas fa-phone"></i> (123) 456-7890</p>
+                    </address>
+                </div>
+            </div>
+            <hr>
+            <div class="text-center">
+                <p>&copy; 2023 Campus Connect Portal. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Events Data (Fallback) -->
+    <script src="events-data.js"></script>
+    <!-- API JS -->
+    <script src="js/api.js"></script>
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+    <!-- Events Page Specific JS -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Load events from API
+            const eventsContainer = document.getElementById('eventsContainer');
+            
+            if (eventsContainer) {
+                // Clear container and show loading
+                eventsContainer.innerHTML = '<div class="col-12 text-center my-5"><div class="spinner-border text-primary" role="status"><span class="visually-hidden">Loading...</span></div><p class="mt-2">Loading events...</p></div>';
+                
+                // Fetch events from API
+                fetchEvents().then(events => {
+                    // Clear container
+                    eventsContainer.innerHTML = '';
+                    
+                    if (events && events.length > 0) {
+                        // Add events
+                        events.forEach(event => {
+                            const eventCard = document.createElement('div');
+                            eventCard.className = 'col-md-4 mb-4';
+                            eventCard.dataset.category = event.category.toLowerCase();
+                            eventCard.dataset.date = 'upcoming'; // This would be dynamic in a real app
+                            
+                            // Log the image path for debugging
+                            console.log('Event image path:', event.image);
+                            
+                            eventCard.innerHTML = `
+                                <div class="card h-100">
+                                    <img src="${event.image}" 
+                                         class="card-img-top" alt="${event.title}" 
+                                         style="height: 220px; object-fit: cover;"
+                                         onerror="this.onerror=null; this.src='https://source.unsplash.com/600x400/?${event.category.toLowerCase()},event'; console.log('Image failed to load, using fallback for: ' + this.alt);">
+                                    <div class="card-body">
+                                        <div class="d-flex justify-content-between align-items-start mb-2">
+                                            <h5 class="card-title">${event.title}</h5>
+                                            <span class="badge bg-${event.categoryClass}">${event.category}</span>
+                                        </div>
+                                        <p class="card-text">${event.description.substring(0, 100)}...</p>
+                                        <p class="card-text">
+                                            <small class="text-muted">
+                                                <i class="fas fa-calendar-alt"></i> ${event.date} | 
+                                                <i class="fas fa-map-marker-alt"></i> ${event.location}
+                                            </small>
+                                        </p>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <a href="event-details.html?id=${event.id}" class="btn btn-accent">View Details</a>
+                                            <span class="badge bg-${event.statusClass}">${event.status}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            `;
+                            
+                            eventsContainer.appendChild(eventCard);
+                        });
+                    } else {
+                        eventsContainer.innerHTML = '<div class="col-12 text-center my-5"><h4>No events found</h4><p>There are currently no events available.</p></div>';
+                    }
+                }).catch(error => {
+                    console.error('Error loading events:', error);
+                    eventsContainer.innerHTML = '<div class="col-12 text-center my-5"><h4>Error loading events</h4><p>Please try again later.</p></div>';
+                });
+            } else {
+                console.error('Events container not found');
+            }
+        });
+    </script>
+
+    <!-- Events Data -->
+    <script src="events-data.js"></script>
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+    <!-- Events Page Specific JS -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Load events from events-data.js
+            const eventsContainer = document.getElementById('eventsContainer');
+            
+            if (eventsContainer && typeof eventsData !== 'undefined') {
+                // Clear container
+                eventsContainer.innerHTML = '';
+                
+                // Add events
+                eventsData.forEach(event => {
+                    const eventCard = document.createElement('div');
+                    eventCard.className = 'col-md-4 mb-4';
+                    eventCard.dataset.category = event.category.toLowerCase();
+                    eventCard.dataset.date = 'upcoming'; // This would be dynamic in a real app
+                    
+                    // Log the image path for debugging
+                    console.log('Event image path:', event.image);
+                    
+                    eventCard.innerHTML = `
+                        <div class="card h-100">
+                            <img src="${event.image}" 
+                                 class="card-img-top" alt="${event.title}" 
+                                 style="height: 220px; object-fit: cover;"
+                                 onerror="this.onerror=null; this.src='https://source.unsplash.com/600x400/?${event.category.toLowerCase()},event'; console.log('Image failed to load, using fallback for: ' + this.alt);">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-start mb-2">
+                                    <h5 class="card-title">${event.title}</h5>
+                                    <span class="badge bg-${event.categoryClass}">${event.category}</span>
+                                </div>
+                                <p class="card-text">${event.description.substring(0, 100)}...</p>
+                                <p class="card-text">
+                                    <small class="text-muted">
+                                        <i class="fas fa-calendar-alt"></i> ${event.date} | 
+                                        <i class="fas fa-map-marker-alt"></i> ${event.location}
+                                    </small>
+                                </p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <a href="event-details.html?id=${event.id}" class="btn btn-accent">View Details</a>
+                                    <span class="badge bg-${event.statusClass}">${event.status}</span>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                    
+                    eventsContainer.appendChild(eventCard);
+                });
+            } else {
+                console.error('Events container not found or events data not loaded');
+            }
+        });
+    </script>
+</body>
+</html>

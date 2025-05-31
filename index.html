@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campus Connect Portal</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Decorative Elements -->
+    <div class="floating-decoration"></div>
+    <div class="floating-decoration"></div>
+    <div class="floating-decoration"></div>
+    <div class="floating-decoration"></div>
+    
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Campus Connect</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="events.html">Events</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="clubs.html">Clubs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="announcements.html">Announcements</a>
+                    </li>
+
+                </ul>
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="searchInput">
+                    <button class="btn btn-outline-light" type="submit">Search</button>
+                </form>
+            </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Banner Section -->
+    <section class="banner-section">
+        <div id="banner" class="carousel slide carousel-fade" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#banner" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#banner" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#banner" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active" style="background: linear-gradient(135deg, var(--primary-dark), var(--primary-color));">
+                    <img src="IMG/COLLEGE.jpg" class="d-block w-100" alt="Campus Life">
+                    <div class="carousel-caption">
+                        <h2>Welcome to Campus Connect</h2>
+                        <p>Your one-stop portal for campus events, clubs, and announcements</p>
+                    </div>
+                </div>
+                <div class="carousel-item" style="background: linear-gradient(135deg, var(--info-color), var(--primary-light));">
+                    <img src="IMG/poster for Annual Dance Competition (1).png" class="d-block w-100" alt="University Events">
+                    <div class="carousel-caption">
+                        <h2>Upcoming Events</h2>
+                        <p>Stay updated with all the exciting events happening on campus</p>
+                    </div>
+                </div>
+                <div class="carousel-item" style="background: linear-gradient(135deg, var(--accent-color), var(--accent-light));">
+                    <img src="IMG/981da523-6566-4b29-a928-b4abcd322892 (2).jpg" class="d-block w-100" alt="Student Clubs">
+                    <div class="carousel-caption">
+                        <h2>Join Campus Clubs</h2>
+                        <p>Explore and join various clubs to enhance your campus experience</p>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#banner" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#banner" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </section>
+
+    <!-- Upcoming Events Section -->
+    <section class="container my-5 content-section">
+        <h2 class="text-center mb-4">Upcoming Events</h2>
+        
+        <div class="row" id="featuredEventsContainer">
+            <!-- Events will be loaded dynamically from events-data.js -->
+            <div class="col-12 text-center">
+                <div class="spinner-border text-primary" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+                <p>Loading events...</p>
+            </div>
+        </div>
+        
+        <div class="text-center mt-4">
+            <a href="events.html" class="btn btn-outline-accent">View All Events</a>
+        </div>
+    </section>
+
+    <!-- Featured Clubs Section -->
+    <section class="bg-light py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">Featured Clubs</h2>
+            
+            <div class="row" id="featuredClubsContainer">
+                <!-- Clubs will be loaded dynamically -->
+                <div class="col-12 text-center">
+                    <div class="spinner-border text-primary" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                    <p>Loading clubs...</p>
+                </div>
+            </div>
+            
+            <div class="text-center mt-4">
+                <a href="clubs.html" class="btn btn-outline-primary">Explore All Clubs</a>
+            </div>
+        </div>
+    </section>
+
+
+    
+    <!-- Announcements Section -->
+    <section class="container my-5 content-section">
+        <h2 class="text-center mb-4">Latest Announcements</h2>
+        
+        <div class="list-group" id="featuredAnnouncementsContainer">
+            <!-- Announcements will be loaded dynamically -->
+            <div class="text-center py-4">
+                <div class="spinner-border text-primary" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+                <p>Loading announcements...</p>
+            </div>
+        </div>
+        
+        <div class="text-center mt-4">
+            <a href="announcements.html" class="btn btn-outline-primary">View All Announcements</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <h5>Campus Connect</h5>
+                    <p>Your one-stop portal for campus events, clubs, and announcements.</p>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="text-white">Home</a></li>
+                        <li><a href="events.html" class="text-white">Events</a></li>
+                        <li><a href="clubs.html" class="text-white">Clubs</a></li>
+                        <li><a href="announcements.html" class="text-white">Announcements</a></li>
+
+                    </ul>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <h5>Contact Us</h5>
+                    <address>
+                        <p><i class="fas fa-map-marker-alt"></i> 123 University Ave, Campus City</p>
+                        <p><i class="fas fa-envelope"></i> info@campusconnect.edu</p>
+                        <p><i class="fas fa-phone"></i> (123) 456-7890</p>
+                    </address>
+                </div>
+            </div>
+            <hr>
+            <div class="text-center">
+                <p>&copy; 2023 Campus Connect Portal. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Data Scripts (Fallback) -->
+    <script src="events-data.js"></script>
+    <script src="clubs-data.js"></script>
+    <script src="announcements-data.js"></script>
+    <!-- API JS -->
+    <script src="js/api.js"></script>
+    <!-- Custom JS -->
+    <script src="js/script.js"></script>
+</body>
+</html>

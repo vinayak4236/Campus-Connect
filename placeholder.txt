@@ -1,0 +1,10 @@
+This directory should contain the following image files:
+
+1. poster for an annual music festival.png
+2. poster for Tech Hackathon 2023.png
+3. poster for Career Development Seminar.png
+4. poster for Inter-College Sports Meet.png
+5. poster for Research Methodology Workshop.png
+6. poster for Annual Dance Competition (1).png
+
+Since these images are missing, let's modify the code to use placeholder images instead.

@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clubs - Campus Connect Portal</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/club-styles.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Decorative Elements -->
+    <div class="floating-decoration"></div>
+    <div class="floating-decoration"></div>
+    <div class="floating-decoration"></div>
+    <div class="floating-decoration"></div>
+    
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Campus Connect</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="events.html">Events</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="clubs.html">Clubs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="announcements.html">Announcements</a>
+                    </li>
+
+                </ul>
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="searchInput">
+                    <button class="btn btn-outline-light" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="bg-light py-5 announcement-header">
+        <div class="container">
+            <h1 class="display-4">Campus Clubs</h1>
+            <p class="lead">Discover and join various clubs to enhance your campus experience and develop new skills.</p>
+        </div>
+    </header>
+
+    <!-- Filter Section -->
+    <section class="container mt-4 content-section">
+        <div class="row">
+            <div class="col-md-4 mb-3">
+                <label for="clubCategoryFilter" class="form-label">Filter by Category:</label>
+                <select class="form-select" id="clubCategoryFilter">
+                    <option value="all" selected>All Categories</option>
+                    <option value="academic">Academic</option>
+                    <option value="cultural">Cultural</option>
+                    <option value="sports">Sports</option>
+                    <option value="tech">Technology</option>
+                    <option value="social">Social Service</option>
+                </select>
+            </div>
+            <div class="col-md-8 mb-3">
+                <label for="clubSearch" class="form-label">Search Clubs:</label>
+                <input type="text" class="form-control" id="clubSearch" placeholder="Search by club name, description, etc.">
+            </div>
+        </div>
+    </section>
+
+    <!-- Clubs List Section -->
+    <section class="container my-5 content-section">
+        <div id="clubsContainer" class="row"><div class="col-lg-6 mb-4" data-category="tech" id="robotics">
+                <div class="card h-100">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <img src="IMG/poster for Robotics Club.png" class="img-fluid rounded-start h-100 w-100 object-fit-cover" alt="Robotics Club">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-start">
+                                    <h4 class="card-title">Robotics Club</h4>
+                                    <span class="badge bg-warning text-dark">Technology</span>
+                                </div>
+                                <p class="card-text">Design, build, and program robots for competitions and exhibitions. Learn about mechanical engineering, electronics, and programming in a hands-on environment.</p>
+                                <div class="mb-3">
+                                    <h6>Meeting Schedule:</h6>
+                                    <p class="mb-0"><i class="fas fa-calendar-alt me-2"></i> Every Tuesday and Thursday</p>
+                                    <p class="mb-0"><i class="fas fa-clock me-2"></i> 4:00 PM - 6:00 PM</p>
+                                    <p class="mb-0"><i class="fas fa-map-marker-alt me-2"></i> Engineering Building, Room 305</p>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <button class="btn btn-accent" data-bs-toggle="modal" data-bs-target="#joinClubModal" data-club="Robotics Club">Join Club</button>
+                                    <span><i class="fas fa-users me-1"></i> 45 members</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div><div class="col-lg-6 mb-4" data-category="academic" id="debate">
+                <div class="card h-100">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <img src="IMG/981da523-6566-4b29-a928-b4abcd322892 (3).jpg" class="img-fluid rounded-start h-100 w-100 object-fit-cover" alt="Debate Club">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-start">
+                                    <h4 class="card-title">Debate Club</h4>
+                                    <span class="badge bg-primary">Academic</span>
+                                </div>
+                                <p class="card-text">Enhance your public speaking and critical thinking skills through debates on various topics. Participate in inter-college debate competitions and host debate events.</p>
+                                <div class="mb-3">
+                                    <h6>Meeting Schedule:</h6>
+                                    <p class="mb-0"><i class="fas fa-calendar-alt me-2"></i> Every Monday</p>
+                                    <p class="mb-0"><i class="fas fa-clock me-2"></i> 5:00 PM - 7:00 PM</p>
+                                    <p class="mb-0"><i class="fas fa-map-marker-alt me-2"></i> Liberal Arts Building, Room 201</p>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <button class="btn btn-accent" data-bs-toggle="modal" data-bs-target="#joinClubModal" data-club="Debate Club">Join Club</button>
+                                    <span><i class="fas fa-users me-1"></i> 32 members</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div><div class="col-lg-6 mb-4" data-category="cultural" id="photography">
+                <div class="card h-100">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <img src="IMG/981da523-6566-4b29-a928-b4abcd322892 (2).jpg" class="img-fluid rounded-start h-100 w-100 object-fit-cover" alt="Photography Club">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-start">
+                                    <h4 class="card-title">Photography Club</h4>
+                                    <span class="badge bg-info">Cultural</span>
+                                </div>
+                                <p class="card-text">Explore the art of photography through workshops, photo walks, and exhibitions. Learn about composition, lighting, editing, and various photography techniques.</p>
+                                <div class="mb-3">
+                                    <h6>Meeting Schedule:</h6>
+                                    <p class="mb-0"><i class="fas fa-calendar-alt me-2"></i> Every Wednesday</p>
+                                    <p class="mb-0"><i class="fas fa-clock me-2"></i> 3:30 PM - 5:30 PM</p>
+                                    <p class="mb-0"><i class="fas fa-map-marker-alt me-2"></i> Arts Building, Room 102</p>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <button class="btn btn-accent" data-bs-toggle="modal" data-bs-target="#joinClubModal" data-club="Photography Club">Join Club</button>
+                                    <span><i class="fas fa-users me-1"></i> 38 members</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div><div class="col-lg-6 mb-4" data-category="sports" id="sports">
+                <div class="card h-100">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <img src="IMG/981da523-6566-4b29-a928-b4abcd322892 (4).jpg" class="img-fluid rounded-start h-100 w-100 object-fit-cover" alt="Sports Club">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-start">
+                                    <h4 class="card-title">Sports Club</h4>
+                                    <span class="badge bg-danger">Sports</span>
+                                </div>
+                                <p class="card-text">Participate in various sports activities including basketball, football, volleyball, and more. Join teams for inter-college tournaments and friendly matches.</p>
+                                <div class="mb-3">
+                                    <h6>Meeting Schedule:</h6>
+                                    <p class="mb-0"><i class="fas fa-calendar-alt me-2"></i> Every Friday</p>
+                                    <p class="mb-0"><i class="fas fa-clock me-2"></i> 4:00 PM - 6:00 PM</p>
+                                    <p class="mb-0"><i class="fas fa-map-marker-alt me-2"></i> Sports Complex</p>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <button class="btn btn-accent" data-bs-toggle="modal" data-bs-target="#joinClubModal" data-club="Sports Club">Join Club</button>
+                                    <span><i class="fas fa-users me-1"></i> 60 members</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div><div class="col-lg-6 mb-4" data-category="social" id="social">
+                <div class="card h-100">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <img src="IMG/981da523-6566-4b29-a928-b4abcd322892 (1).jpg" class="img-fluid rounded-start h-100 w-100 object-fit-cover" alt="Social Service Club">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-start">
+                                    <h4 class="card-title">Social Service Club</h4>
+                                    <span class="badge bg-success">Social Service</span>
+                                </div>
+                                <p class="card-text">Engage in community service activities such as teaching underprivileged children, organizing blood donation camps, and environmental awareness campaigns.</p>
+                                <div class="mb-3">
+                                    <h6>Meeting Schedule:</h6>
+                                    <p class="mb-0"><i class="fas fa-calendar-alt me-2"></i> Every Saturday</p>
+                                    <p class="mb-0"><i class="fas fa-clock me-2"></i> 10:00 AM - 12:00 PM</p>
+                                    <p class="mb-0"><i class="fas fa-map-marker-alt me-2"></i> Student Center, Room 105</p>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <button class="btn btn-accent" data-bs-toggle="modal" data-bs-target="#joinClubModal" data-club="Social Service Club">Join Club</button>
+                                    <span><i class="fas fa-users me-1"></i> 42 members</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div></div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <h5>Campus Connect</h5>
+                    <p>Your one-stop portal for campus events, clubs, and announcements.</p>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="text-white">Home</a></li>
+                        <li><a href="events.html" class="text-white">Events</a></li>
+                        <li><a href="clubs.html" class="text-white">Clubs</a></li>
+                        <li><a href="announcements.html" class="text-white">Announcements</a></li>
+
+                    </ul>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <h5>Contact Us</h5>
+                    <address>
+                        <p><i class="fas fa-map-marker-alt"></i> 123 University Ave, Campus City</p>
+                        <p><i class="fas fa-envelope"></i> info@campusconnect.edu</p>
+                        <p><i class="fas fa-phone"></i> (123) 456-7890</p>
+                    </address>
+                </div>
+            </div>
+            <hr>
+            <div class="text-center">
+                <p>&copy; 2023 Campus Connect Portal. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    
+    <!-- Bootstrap JS Bundle with Popper -->
+    
+    <!-- Clubs Data (Fallback) -->
+    
+    <!-- API JS -->
+    
+    <!-- Custom JS -->
+    
+    <!-- Clubs Page Specific JS -->
+    
+
+    <!-- Clubs Data -->
+    
+    <!-- Custom JS -->
+    
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    
+    <!-- Clubs Data (Fallback) -->
+    
+
+
+
+<!-- Bootstrap JS Bundle with Popper -->
+
+<!-- Clubs Data -->
+
+
+
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Clubs Data (Fallback) -->
+    <script src="clubs-data.js"></script>
+    <!-- API JS -->
+    <script src="js/api.js"></script>
+    <!-- Clubs JS -->
+    <script src="clubs.js"></script>
+</body>
+</html>

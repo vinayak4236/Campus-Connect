@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Announcements - Campus Connect Portal</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Decorative Elements -->
+    <div class="floating-decoration"></div>
+    <div class="floating-decoration"></div>
+    <div class="floating-decoration"></div>
+    <div class="floating-decoration"></div>
+    
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Campus Connect</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="events.html">Events</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="clubs.html">Clubs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="announcements.html">Announcements</a>
+                    </li>
+
+                </ul>
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="searchInput">
+                    <button class="btn btn-outline-light" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="announcement-header">
+        <div class="container">
+            <h1 class="display-4">Campus Announcements</h1>
+            <p class="lead">Stay updated with the latest announcements from the campus administration, departments, and student organizations.</p>
+        </div>
+    </header>
+
+    <!-- Filter Section -->
+    <section class="container mt-4 content-section">
+        <div class="row">
+            <div class="col-md-8 mb-3">
+                <div class="btn-group" role="group" aria-label="Announcement filters">
+                    <button type="button" class="btn btn-outline-primary announcement-filter announcement-filter-active" data-filter="all">All Announcements</button>
+                    <button type="button" class="btn btn-outline-danger announcement-filter" data-filter="important">Important</button>
+                    <button type="button" class="btn btn-outline-success announcement-filter" data-filter="academic">Academic</button>
+                    <button type="button" class="btn btn-outline-warning announcement-filter" data-filter="event">Events</button>
+                    <button type="button" class="btn btn-outline-info announcement-filter" data-filter="general">General</button>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <input type="text" class="form-control" id="announcementSearch" placeholder="Search announcements...">
+            </div>
+        </div>
+    </section>
+
+    <!-- Announcements List Section -->
+    <section class="container my-4 content-section">
+        <div id="announcementsContainer">
+            <!-- Important Announcement -->
+            <div class="card mb-4 announcement-card important">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between align-items-start">
+                        <h4 class="announcement-title">Campus Closure Due to Weather Conditions</h4>
+                        <span class="badge bg-danger">Important</span>
+                    </div>
+                    <div class="announcement-meta">
+                        <span class="announcement-date"><i class="fas fa-calendar-alt me-1"></i> June 2, 2023</span>
+                        <span class="ms-3"><i class="fas fa-user me-1"></i> Campus Administration</span>
+                    </div>
+                    <div class="announcement-content">
+                        <p>Due to severe weather conditions forecasted for tomorrow, June 3, 2023, the campus will remain closed. All classes, exams, and events scheduled for tomorrow are postponed. The new schedule will be announced soon.</p>
+                        <p>Students and staff are advised to stay indoors and follow safety guidelines issued by local authorities. Emergency services on campus will remain operational.</p>
+                        <p>For any emergencies, please contact the campus security at (123) 456-7899.</p>
+                    </div>
+                    <div class="announcement-footer">
+                        <span class="text-muted">Last updated: June 2, 2023, 4:30 PM</span>
+                        <div class="announcement-actions">
+                            <a href="#" data-bs-toggle="tooltip" title="Share"><i class="fas fa-share-alt"></i></a>
+                            <a href="#" data-bs-toggle="tooltip" title="Print"><i class="fas fa-print"></i></a>
+                            <a href="#" data-bs-toggle="tooltip" title="Download"><i class="fas fa-download"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Academic Announcement -->
+            <div class="card mb-4 announcement-card academic">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between align-items-start">
+                        <h4 class="announcement-title">Final Exam Schedule Released</h4>
+                        <span class="badge bg-success">Academic</span>
+                    </div>
+                    <div class="announcement-meta">
+                        <span class="announcement-date"><i class="fas fa-calendar-alt me-1"></i> May 28, 2023</span>
+                        <span class="ms-3"><i class="fas fa-user me-1"></i> Office of the Registrar</span>
+                    </div>
+                    <div class="announcement-content">
+                        <p>The final examination schedule for the Spring 2023 semester has been released. Students can access their individual exam schedules through the student portal.</p>
+                        <p>The examination period will run from June 15 to June 30, 2023. Please note the following important points:</p>
+                        <ul>
+                            <li>Students must bring their ID cards to all exams.</li>
+                            <li>Electronic devices are not allowed in the examination hall unless specified by the instructor.</li>
+                            <li>Students with exam conflicts should contact the Office of the Registrar immediately.</li>
+                            <li>Special accommodation requests must be submitted by June 5, 2023.</li>
+                        </ul>
+                        <p>For any queries regarding the examination schedule, please contact the Office of the Registrar at registrar@campusconnect.edu.</p>
+                    </div>
+                    <div class="announcement-footer">
+                        <span class="text-muted">Last updated: May 28, 2023, 10:15 AM</span>
+                        <div class="announcement-actions">
+                            <a href="#" data-bs-toggle="tooltip" title="Share"><i class="fas fa-share-alt"></i></a>
+                            <a href="#" data-bs-toggle="tooltip" title="Print"><i class="fas fa-print"></i></a>
+                            <a href="#" data-bs-toggle="tooltip" title="Download"><i class="fas fa-download"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Event Announcement -->
+            <div class="card mb-4 announcement-card event">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between align-items-start">
+                        <h4 class="announcement-title">Annual Alumni Meet 2023</h4>
+                        <span class="badge bg-warning text-dark">Event</span>
+                    </div>
+                    <div class="announcement-meta">
+                        <span class="announcement-date"><i class="fas fa-calendar-alt me-1"></i> May 25, 2023</span>
+                        <span class="ms-3"><i class="fas fa-user me-1"></i> Alumni Relations Office</span>
+                    </div>
+                    <div class="announcement-content">
+                        <p>We are excited to announce the Annual Alumni Meet 2023, scheduled for July 15-16, 2023. This year's theme is "Reconnect, Reminisce, Reimagine."</p>
+                        <p>The event will feature:</p>
+                        <ul>
+                            <li>Keynote speeches by distinguished alumni</li>
+                            <li>Panel discussions on industry trends</li>
+                            <li>Networking sessions</li>
+                            <li>Campus tours</li>
+                            <li>Cultural performances</li>
+                            <li>Gala dinner</li>
+                        </ul>
+                        <p>Registration is now open. Early bird registration ends on June 15, 2023. Current students interested in volunteering for the event can contact the Alumni Relations Office.</p>
+                        <p>For more information and registration, visit <a href="#">alumni.campusconnect.edu</a> or contact alumni@campusconnect.edu.</p>
+                    </div>
+                    <div class="announcement-footer">
+                        <span class="text-muted">Last updated: May 25, 2023, 2:45 PM</span>
+                        <div class="announcement-actions">
+                            <a href="#" data-bs-toggle="tooltip" title="Share"><i class="fas fa-share-alt"></i></a>
+                            <a href="#" data-bs-toggle="tooltip" title="Print"><i class="fas fa-print"></i></a>
+                            <a href="#" data-bs-toggle="tooltip" title="Download"><i class="fas fa-download"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- General Announcement -->
+            <div class="card mb-4 announcement-card general">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between align-items-start">
+                        <h4 class="announcement-title">Library Hours Extended During Finals Week</h4>
+                        <span class="badge bg-info">General</span>
+                    </div>
+                    <div class="announcement-meta">
+                        <span class="announcement-date"><i class="fas fa-calendar-alt me-1"></i> May 20, 2023</span>
+                        <span class="ms-3"><i class="fas fa-user me-1"></i> Campus Library</span>
+                    </div>
+                    <div class="announcement-content">
+                        <p>To support students during the final examination period, the campus library will extend its operating hours from June 10 to June 30, 2023.</p>
+                        <p>Extended Library Hours:</p>
+                        <ul>
+                            <li>Monday to Friday: 7:00 AM - 2:00 AM</li>
+                            <li>Saturday and Sunday: 8:00 AM - 12:00 AM</li>
+                        </ul>
+                        <p>Additional services available during this period:</p>
+                        <ul>
+                            <li>Extended access to study rooms (reservation required)</li>
+                            <li>24/7 access to online resources</li>
+                            <li>Extended laptop lending service</li>
+                            <li>Free printing (up to 100 pages per student)</li>
+                        </ul>
+                        <p>For reservations and inquiries, please contact library@campusconnect.edu or visit the library information desk.</p>
+                    </div>
+                    <div class="announcement-footer">
+                        <span class="text-muted">Last updated: May 20, 2023, 11:30 AM</span>
+                        <div class="announcement-actions">
+                            <a href="#" data-bs-toggle="tooltip" title="Share"><i class="fas fa-share-alt"></i></a>
+                            <a href="#" data-bs-toggle="tooltip" title="Print"><i class="fas fa-print"></i></a>
+                            <a href="#" data-bs-toggle="tooltip" title="Download"><i class="fas fa-download"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Academic Announcement -->
+            <div class="card mb-4 announcement-card academic">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between align-items-start">
+                        <h4 class="announcement-title">Summer Course Registration Now Open</h4>
+                        <span class="badge bg-success">Academic</span>
+                    </div>
+                    <div class="announcement-meta">
+                        <span class="announcement-date"><i class="fas fa-calendar-alt me-1"></i> May 15, 2023</span>
+                        <span class="ms-3"><i class="fas fa-user me-1"></i> Office of the Registrar</span>
+                    </div>
+                    <div class="announcement-content">
+                        <p>Registration for Summer 2023 courses is now open for all students. The summer session will run from July 5 to August 15, 2023.</p>
+                        <p>Key dates to remember:</p>
+                        <ul>
+                            <li>Registration Period: May 15 - June 15, 2023</li>
+                            <li>Late Registration (with fee): June 16 - June 25, 2023</li>
+                            <li>Last Day to Add/Drop Courses: July 10, 2023</li>
+                            <li>Last Day to Withdraw: July 25, 2023</li>
+                        </ul>
+                        <p>Students can register for courses through the student portal. The course catalog for Summer 2023 is now available online.</p>
+                        <p>For academic advising, please contact your department advisor or the Academic Advising Center at advising@campusconnect.edu.</p>
+                    </div>
+                    <div class="announcement-footer">
+                        <span class="text-muted">Last updated: May 15, 2023, 9:00 AM</span>
+                        <div class="announcement-actions">
+                            <a href="#" data-bs-toggle="tooltip" title="Share"><i class="fas fa-share-alt"></i></a>
+                            <a href="#" data-bs-toggle="tooltip" title="Print"><i class="fas fa-print"></i></a>
+                            <a href="#" data-bs-toggle="tooltip" title="Download"><i class="fas fa-download"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- General Announcement -->
+            <div class="card mb-4 announcement-card general">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between align-items-start">
+                        <h4 class="announcement-title">Campus Wi-Fi Network Upgrade</h4>
+                        <span class="badge bg-info">General</span>
+                    </div>
+                    <div class="announcement-meta">
+                        <span class="announcement-date"><i class="fas fa-calendar-alt me-1"></i> May 10, 2023</span>
+                        <span class="ms-3"><i class="fas fa-user me-1"></i> IT Services</span>
+                    </div>
+                    <div class="announcement-content">
+                        <p>IT Services will be upgrading the campus Wi-Fi network infrastructure from May 20 to May 22, 2023. This upgrade will improve network speed, reliability, and coverage across the campus.</p>
+                        <p>During the upgrade period, there will be intermittent connectivity issues in different areas of the campus according to the following schedule:</p>
+                        <ul>
+                            <li>May 20: Academic Buildings (8:00 AM - 5:00 PM)</li>
+                            <li>May 21: Residence Halls and Student Center (8:00 AM - 5:00 PM)</li>
+                            <li>May 22: Library and Administrative Buildings (8:00 AM - 5:00 PM)</li>
+                        </ul>
+                        <p>After the upgrade, users will need to reconnect to the Wi-Fi network using their existing credentials. The network name will remain the same.</p>
+                        <p>For any technical assistance during or after the upgrade, please contact the IT Help Desk at helpdesk@campusconnect.edu or call (123) 456-7898.</p>
+                    </div>
+                    <div class="announcement-footer">
+                        <span class="text-muted">Last updated: May 10, 2023, 3:15 PM</span>
+                        <div class="announcement-actions">
+                            <a href="#" data-bs-toggle="tooltip" title="Share"><i class="fas fa-share-alt"></i></a>
+                            <a href="#" data-bs-toggle="tooltip" title="Print"><i class="fas fa-print"></i></a>
+                            <a href="#" data-bs-toggle="tooltip" title="Download"><i class="fas fa-download"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pagination -->
+        <nav aria-label="Announcements pagination">
+            <ul class="pagination justify-content-center">
+                <li class="page-item disabled">
+                    <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+                </li>
+                <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item">
+                    <a class="page-link" href="#">Next</a>
+                </li>
+            </ul>
+        </nav>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <h5>Campus Connect</h5>
+                    <p>Your one-stop portal for campus events, clubs, and announcements.</p>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="text-white">Home</a></li>
+                        <li><a href="events.html" class="text-white">Events</a></li>
+                        <li><a href="clubs.html" class="text-white">Clubs</a></li>
+                        <li><a href="announcements.html" class="text-white">Announcements</a></li>
+
+                    </ul>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <h5>Contact Us</h5>
+                    <address>
+                        <p><i class="fas fa-map-marker-alt"></i> 123 University Ave, Campus City</p>
+                        <p><i class="fas fa-envelope"></i> info@campusconnect.edu</p>
+                        <p><i class="fas fa-phone"></i> (123) 456-7890</p>
+                    </address>
+                </div>
+            </div>
+            <hr>
+            <div class="text-center">
+                <p>&copy; 2023 Campus Connect Portal. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    
+    
+    <!-- Bootstrap JS Bundle with Popper -->
+    
+    <!-- Announcements Data (Fallback) -->
+    
+    <!-- API JS -->
+    
+    <!-- Custom JS -->
+    
+    <!-- Announcements Page Specific JS -->
+    
+
+    <!-- Announcements Data (Fallback) -->
+    
+    <!-- API JS -->
+    
+    <!-- Custom JS -->
+    
+    <!-- Announcements Page Specific JS -->
+    
+
+    <!-- Initialize tooltips and load announcements -->
+    
+    <!-- Announcements Data -->
+    
+    <!-- Custom JS -->
+    
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Announcements Data (Fallback) -->
+    <script src="announcements-data.js"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    // Initialize filter buttons
+    const filterButtons = document.querySelectorAll(".announcement-filter");
+    
+    filterButtons.forEach(button => {
+        button.addEventListener("click", function() {
+            // Remove active class from all buttons
+            filterButtons.forEach(btn => {
+                btn.classList.remove("announcement-filter-active");
+            });
+            
+            // Add active class to clicked button
+            this.classList.add("announcement-filter-active");
+            
+            // Get filter value
+            const filterValue = this.getAttribute("data-filter");
+            
+            // Filter announcements
+            filterAnnouncements(filterValue);
+        });
+    });
+    
+    // Load announcements from API
+    loadAnnouncements();
+});
+
+// Filter announcements
+function filterAnnouncements(category) {
+    const announcements = document.querySelectorAll(".announcement-card");
+    let found = false;
+    
+    announcements.forEach(announcement => {
+        if (category === "all") {
+            announcement.style.display = "block";
+            found = true;
+        } else if (category === "important" && announcement.classList.contains("important")) {
+            announcement.style.display = "block";
+            found = true;
+        } else if (announcement.classList.contains(category)) {
+            announcement.style.display = "block";
+            found = true;
+        } else {
+            announcement.style.display = "none";
+        }
+    });
+    
+    // Show message if no announcements found
+    const noResultsMsg = document.getElementById("noAnnouncementsMsg");
+    if (!found) {
+        if (!noResultsMsg) {
+            const msg = document.createElement("div");
+            msg.id = "noAnnouncementsMsg";
+            msg.className = "text-center my-5";
+            msg.innerHTML = `<h4>No ${category} announcements found</h4>
+                            <button class="btn btn-outline-primary mt-3" onclick="resetAnnouncementFilters()">Show All Announcements</button>`;
+            document.getElementById("announcementsContainer").appendChild(msg);
+        }
+    } else if (noResultsMsg) {
+        noResultsMsg.remove();
+    }
+}
+
+// Reset announcement filters
+function resetAnnouncementFilters() {
+    const filterButtons = document.querySelectorAll(".announcement-filter");
+    
+    // Remove active class from all buttons
+    filterButtons.forEach(btn => {
+        btn.classList.remove("announcement-filter-active");
+    });
+    
+    // Add active class to "All" button
+    const allButton = document.querySelector(".announcement-filter[data-filter='all']");
+    if (allButton) {
+        allButton.classList.add("announcement-filter-active");
+    }
+    
+    // Show all announcements
+    filterAnnouncements("all");
+}
+
+// Load announcements from API
+function loadAnnouncements() {
+    const announcementsContainer = document.getElementById("announcementsContainer");
+    
+    if (announcementsContainer) {
+        // Clear container and show loading
+        announcementsContainer.innerHTML = '<div class="text-center my-5"><div class="spinner-border text-primary" role="status"><span class="visually-hidden">Loading...</span></div><p class="mt-2">Loading announcements...</p></div>';
+        
+        // Fetch announcements from API
+        fetch("api/announcements.php")
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Failed to fetch announcements");
+                }
+                return response.json();
+            })
+            .then(announcements => {
+                // Clear container
+                announcementsContainer.innerHTML = "";
+                
+                if (announcements && announcements.length > 0) {
+                    // Add announcements
+                    announcements.forEach(announcement => {
+                        // Determine CSS classes for filtering
+                        let categoryClass = announcement.category.toLowerCase();
+                        let priorityClass = announcement.priority === "high" ? "important" : "";
+                        
+                        const announcementCard = document.createElement("div");
+                        announcementCard.className = `announcement-card mb-4 ${categoryClass} ${priorityClass}`;
+                        
+                        announcementCard.innerHTML = `
+                            <div class="card ${announcement.priority === "high" ? "border-danger" : ""}">
+                                <div class="card-header d-flex justify-content-between align-items-center">
+                                    <h5 class="announcement-title mb-0">${announcement.title}</h5>
+                                    <span class="badge bg-${announcement.categoryClass}">${announcement.category}</span>
+                                </div>
+                                <div class="card-body">
+                                    <p class="announcement-content">${announcement.content}</p>
+                                    <div class="d-flex justify-content-between align-items-center mt-3">
+                                        <small class="text-muted">
+                                            <i class="fas fa-user"></i> ${announcement.author} | 
+                                            <i class="fas fa-calendar-alt"></i> ${announcement.displayDate || announcement.date}
+                                        </small>
+                                        ${announcement.priority === "high" ? '<span class="badge bg-danger">Important</span>' : ""}
+                                    </div>
+                                </div>
+                            </div>
+                        `;
+                        
+                        announcementsContainer.appendChild(announcementCard);
+                    });
+                    
+                    // Apply current filter if any
+                    const activeFilter = document.querySelector(".announcement-filter-active");
+                    if (activeFilter) {
+                        filterAnnouncements(activeFilter.getAttribute("data-filter"));
+                    }
+                } else {
+                    announcementsContainer.innerHTML = '<div class="text-center my-5"><h4>No announcements found</h4><p>There are currently no announcements available.</p></div>';
+                }
+            })
+            .catch(error => {
+                console.error("Error loading announcements:", error);
+                
+                // Try to load from static data as fallback
+                if (typeof announcementsData !== "undefined") {
+                    console.log("Loading announcements from static data");
+                    
+                    // Clear container
+                    announcementsContainer.innerHTML = "";
+                    
+                    // Add announcements from static data
+                    announcementsData.forEach(announcement => {
+                        // Determine CSS classes for filtering
+                        let categoryClass = announcement.category.toLowerCase();
+                        let priorityClass = announcement.priority === "high" ? "important" : "";
+                        
+                        const announcementCard = document.createElement("div");
+                        announcementCard.className = `announcement-card mb-4 ${categoryClass} ${priorityClass}`;
+                        
+                        announcementCard.innerHTML = `
+                            <div class="card ${announcement.priority === "high" ? "border-danger" : ""}">
+                                <div class="card-header d-flex justify-content-between align-items-center">
+                                    <h5 class="announcement-title mb-0">${announcement.title}</h5>
+                                    <span class="badge bg-${announcement.categoryClass}">${announcement.category}</span>
+                                </div>
+                                <div class="card-body">
+                                    <p class="announcement-content">${announcement.content}</p>
+                                    <div class="d-flex justify-content-between align-items-center mt-3">
+                                        <small class="text-muted">
+                                            <i class="fas fa-user"></i> ${announcement.author} | 
+                                            <i class="fas fa-calendar-alt"></i> ${announcement.displayDate || announcement.date}
+                                        </small>
+                                        ${announcement.priority === "high" ? '<span class="badge bg-danger">Important</span>' : ""}
+                                    </div>
+                                </div>
+                            </div>
+                        `;
+                        
+                        announcementsContainer.appendChild(announcementCard);
+                    });
+                    
+                    // Apply current filter if any
+                    const activeFilter = document.querySelector(".announcement-filter-active");
+                    if (activeFilter) {
+                        filterAnnouncements(activeFilter.getAttribute("data-filter"));
+                    }
+                } else {
+                    announcementsContainer.innerHTML = '<div class="text-center my-5"><h4>Error loading announcements</h4><p>Please try again later.</p></div>';
+                }
+            });
+    }
+}
+</script>
+</body>
+</html>

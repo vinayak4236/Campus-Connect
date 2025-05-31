@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Details Test Links</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1>Event Details Test Links</h1>
+        <p>Click on the links below to test the event details page:</p>
+        
+        <div class="list-group mt-4" id="eventLinks">
+            <div class="spinner-border text-primary" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+            <p>Loading events...</p>
+        </div>
+    </div>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const eventLinks = document.getElementById("eventLinks");
+            
+            // Fetch events from API
+            fetch("api/events.php")
+                .then(response => response.json())
+                .then(events => {
+                    // Clear loading indicator
+                    eventLinks.innerHTML = "";
+                    
+                    if (events.length === 0) {
+                        eventLinks.innerHTML = "<p>No events found in the database.</p>";
+                        return;
+                    }
+                    
+                    // Add links for each event
+                    events.forEach(event => {
+                        const link = document.createElement("a");
+                        link.href = `event-details.html?id=${event.id}`;
+                        link.className = "list-group-item list-group-item-action";
+                        link.innerHTML = `
+                            <div class="d-flex w-100 justify-content-between">
+                                <h5 class="mb-1">${event.title}</h5>
+                                <small>ID: ${event.id}</small>
+                            </div>
+                            <p class="mb-1">${event.description.substring(0, 100)}...</p>
+                            <small>${event.date} | ${event.location}</small>
+                        `;
+                        eventLinks.appendChild(link);
+                    });
+                })
+                .catch(error => {
+                    console.error("Error fetching events:", error);
+                    eventLinks.innerHTML = `<p class="text-danger">Error loading events: ${error.message}</p>`;
+                });
+        });
+    </script>
+</body>
+</html>

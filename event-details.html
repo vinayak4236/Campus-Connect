@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Details - Campus Connect Portal</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Decorative Elements -->
+    <div class="floating-decoration"></div>
+    <div class="floating-decoration"></div>
+    <div class="floating-decoration"></div>
+    <div class="floating-decoration"></div>
+    
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Campus Connect</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="events.html">Events</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="clubs.html">Clubs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="announcements.html">Announcements</a>
+                    </li>
+
+                </ul>
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="searchInput">
+                    <button class="btn btn-outline-light" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Event Details Section -->
+    <div class="container my-5 content-section" id="eventDetailsContainer">
+        <!-- Content will be dynamically loaded based on the event ID -->
+        <div class="text-center my-5" id="loading">
+            <div class="spinner-border text-primary" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+            <p class="mt-2">Loading event details...</p>
+        </div>
+    </div>
+
+    <!-- Related Events Section -->
+    <section class="container my-5" id="relatedEventsSection" style="display: none;">
+        <h3 class="mb-4">Related Events</h3>
+        <div class="row" id="relatedEventsContainer">
+            <!-- Related events will be dynamically loaded -->
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <h5>Campus Connect</h5>
+                    <p>Your one-stop portal for campus events, clubs, and announcements.</p>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="text-white">Home</a></li>
+                        <li><a href="events.html" class="text-white">Events</a></li>
+                        <li><a href="clubs.html" class="text-white">Clubs</a></li>
+                        <li><a href="announcements.html" class="text-white">Announcements</a></li>
+
+                    </ul>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <h5>Contact Us</h5>
+                    <address>
+                        <p><i class="fas fa-map-marker-alt"></i> 123 University Ave, Campus City</p>
+                        <p><i class="fas fa-envelope"></i> info@campusconnect.edu</p>
+                        <p><i class="fas fa-phone"></i> (123) 456-7890</p>
+                    </address>
+                </div>
+            </div>
+            <hr>
+            <div class="text-center">
+                <p>&copy; 2023 Campus Connect Portal. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Event Template (Hidden) -->
+    <template id="eventDetailTemplate">
+        <div class="row">
+            <div class="col-lg-8">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                        <li class="breadcrumb-item"><a href="events.html">Events</a></li>
+                        <li class="breadcrumb-item active" aria-current="page" id="eventTitle">Event Title</li>
+                    </ol>
+                </nav>
+                
+                <div class="mb-4">
+                    <img id="eventImage" src="" alt="Event Image" class="img-fluid rounded">
+                </div>
+                
+                <h1 id="eventHeading">Event Title</h1>
+                <div class="mb-3">
+                    <span id="eventCategory" class="badge bg-primary me-2">Category</span>
+                    <span id="eventStatus" class="badge bg-success">Registration Open</span>
+                </div>
+                
+                <div class="mb-4">
+                    <p id="eventDescription" class="lead">Event description will appear here.</p>
+                </div>
+                
+                <div class="mb-4">
+                    <h4>Event Details</h4>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><i class="fas fa-calendar-alt me-2"></i> <strong>Date:</strong> <span id="eventDate">Date</span></li>
+                        <li class="list-group-item"><i class="fas fa-clock me-2"></i> <strong>Time:</strong> <span id="eventTime">Time</span></li>
+                        <li class="list-group-item"><i class="fas fa-map-marker-alt me-2"></i> <strong>Location:</strong> <span id="eventLocation">Location</span></li>
+                        <li class="list-group-item"><i class="fas fa-user me-2"></i> <strong>Organizer:</strong> <span id="eventOrganizer">Organizer</span></li>
+                    </ul>
+                </div>
+                
+                <div class="mb-4" id="eventScheduleSection">
+                    <h4>Event Schedule</h4>
+                    <div class="table-responsive">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Time</th>
+                                    <th>Activity</th>
+                                    <th>Location</th>
+                                </tr>
+                            </thead>
+                            <tbody id="eventSchedule">
+                                <!-- Schedule items will be added dynamically -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-4">
+                <div class="card mb-4">
+                    <div class="card-header bg-primary text-white">
+                        <h5 class="card-title mb-0">Registration</h5>
+                    </div>
+                    <div class="card-body">
+                        <p id="registrationInfo">Registration is open until <span id="registrationDeadline">deadline</span>.</p>
+                        <p><strong>Available Seats:</strong> <span id="availableSeats">50</span></p>
+                        <div class="d-grid">
+                            <button class="btn btn-success btn-lg" id="registerButton">Register Now</button>
+                        </div>
+                        <div class="alert alert-success mt-3" id="registrationSuccess" style="display: none;">
+                            Registration successful! Check your email for confirmation.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card mb-4">
+                    <div class="card-header bg-info text-white">
+                        <h5 class="card-title mb-0">Contact Information</h5>
+                    </div>
+                    <div class="card-body">
+                        <p><i class="fas fa-envelope me-2"></i> <span id="contactEmail">email@example.com</span></p>
+                        <p><i class="fas fa-phone me-2"></i> <span id="contactPhone">(123) 456-7890</span></p>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header bg-secondary text-white">
+                        <h5 class="card-title mb-0">Share This Event</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="d-flex justify-content-around">
+                            <a href="#" class="text-primary fs-4"><i class="fab fa-facebook"></i></a>
+                            <a href="#" class="text-info fs-4"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="text-success fs-4"><i class="fab fa-whatsapp"></i></a>
+                            <a href="#" class="text-secondary fs-4"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <!-- Related Event Card Template (Hidden) -->
+    <template id="relatedEventTemplate">
+        <div class="col-md-4 mb-4">
+            <div class="card h-100">
+                <img src="" class="card-img-top related-event-image" alt="Related Event">
+                <div class="card-body">
+                    <span class="badge mb-2 related-event-category">Category</span>
+                    <h5 class="card-title related-event-title">Event Title</h5>
+                    <p class="card-text"><small class="text-muted related-event-date-location"></small></p>
+                    <a href="#" class="btn btn-outline-primary related-event-link">View Details</a>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="events-data.js"></script>
+    <script src="js/api.js"></script>
+    <script src="event-details.js"></script>
+</body>
+</html>
